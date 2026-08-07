@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content">
+    <title>OX MODZ – Safe & Verified Android Apps | Official OXMODZ Website</title>
+    <meta name="description" content="OX MODZ (OxModz, OXMODZ, oxmodz) is the official source for verified, safe Android apps and mods. Download premium apps, games, and mods securely from oxmodz.page.gd.">
+    <meta name="google-site-verification" content="jkNeNZXubUoiF2WftFQgLnL0h_elqNuesLE003KHy_8" />
+    <link rel="canonical" href="https://oxmodz.page.gd/" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="OX MODZ – Safe & Verified Android Apps | Official OXMODZ Website" />
+    <meta property="og:description" content="OX MODZ (OxModz, OXMODZ) is the official source for verified, safe Android apps and mods. Download premium apps, games, and mods securely." />
+    <meta property="og:image" content="https://oxmodz.page.gd/favicon.png" />
+    <meta property="og:url" content="https://oxmodz.page.gd/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OX MODZ" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="OX MODZ – Official Android App Store" />
+    <meta name="twitter:description" content="Download verified Android apps & mods. The official OXMODZ website." />
+    <meta name="twitter:image" content="https://oxmodz.page.gd/favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "OX MODZ",
+      "alternateName": [
+        "OXMODZ",
+        "OxModz",
+        "Ox Modz",
+        "oxmodz",
+        "ox modz",
+        "OX-Modz",
+        "ox-modz",
+        "OXMODS",
+        "OxMods",
+        "ox mods",
+        "OX MODS",
+        "oxmod",
+        "OX MOD",
+        "Ox Mod",
+        "ox-mod",
+        "OX-MOD",
+        "oxmodz app",
+        "oxmodz apps",
+        "oxmodz website",
+        "oxmodz official",
+        "oxmodz download",
+        "ox modz app",
+        "ox modz download",
+        "ox modz official"
+      ],
+      "url": "https://oxmodz.page.gd/",
+      "logo": "https://oxmodz.page.gd/favicon.png",
+      "sameAs": [
+        "https://x.com/OfficialOxmodzz",
+        "https://www.instagram.com/officialoxmodz?utm_source=qr&igsh=MXVoMWJwZjYwaGNkcQ==",
+        "https://discord.gg/YSAbVHXtK5",
+        "https://t.me/officialoxmodz"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "OX MODZ",
+      "url": "https://oxmodz.page.gd/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://oxmodz.page.gd/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <style>
+        :root {
+            --ink: #0B0E14;
+            --ink-elev: #11151D;
+            --surface: #161B24;
+            --surface-2: #1C2230;
+            --border: rgba(255, 255, 255, 0.10);
+            --border-2: rgba(255, 255, 255, 0.18);
+            --text: #F4F1EA;
+            --text-dim: #8B93A1;
+            --amber: #FFB020;
+            --amber-dim: rgba(255, 176, 32, 0.14);
+            --mint: #2DD9A8;
+            --mint-dim: rgba(45, 217, 168, 0.14);
+            --coral: #FF5D5D;
+            --coral-dim: rgba(255, 93, 93, 0.14);
+            --r-sm: 8px;
+            --r-md: 14px;
+            --r-lg: 20px;
+            --display: 'Space Grotesk', sans-serif;
+            --body: 'Inter', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html {
+            background: var(--ink);
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--body);
+            background: var(--ink);
+            color: var(--text);
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-image:
+                radial-gradient(circle at 85% 0%, rgba(255, 176, 32, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 0% 100%, rgba(45, 217, 168, 0.05) 0%, transparent 45%);
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+        }
+        ::selection { background: var(--amber); color: var(--ink); }
+
+        /* ---------- ERROR OVERLAY ---------- */
+        #loader-overlay {
+            position: fixed; inset: 0; background: rgba(4,5,8,0.75); backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); z-index: 9999; display: none;
+            align-items: center; justify-content: center;
+        }
+        .error-glass-card {
+            max-width: 380px; width: 90%; background: var(--ink-elev);
+            border: 1px solid var(--border-2); border-radius: var(--r-lg);
+            padding: 36px 28px; text-align: center; box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+        }
+        .error-glass-card .err-icon { font-size: 3rem; margin-bottom: 14px; animation: errPulse 2s ease-in-out infinite; }
+        @keyframes errPulse { 0%,100% { transform: scale(1); opacity: 0.85; } 50% { transform: scale(1.06); opacity: 1; } }
+        .error-glass-card .err-title { font-family: var(--display); font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+        .error-glass-card .err-desc { font-size: 0.88rem; color: var(--text-dim); line-height: 1.5; margin-bottom: 24px; }
+        .error-glass-card .err-btn {
+            display: block; width: 100%; padding: 13px; border: none; border-radius: var(--r-sm);
+            font-family: var(--body); font-weight: 700; font-size: 0.95rem; cursor: pointer;
+            transition: filter 0.2s, transform 0.15s;
+        }
+        .error-glass-card .err-btn.primary { background: var(--amber); color: var(--ink); margin-bottom: 10px; }
+        .error-glass-card .err-btn.primary:hover { filter: brightness(1.08); }
+        .error-glass-card .err-btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--text-dim); }
+        .error-glass-card .err-btn.ghost:hover { border-color: var(--border-2); color: var(--text); }
+
+        /* ---------- HEADER ---------- */
+        .store-header {
+            padding: 14px 20px; background: rgba(11,14,20,0.85); backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo-area { display: flex; align-items: center; gap: 13px; }
+        .logo-seal { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+        .logo-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--ink), 0 0 0 3px var(--amber); }
+        #header-name { font-family: var(--display); font-size: 1.3rem; font-weight: 700; letter-spacing: 0.2px; color: var(--text); }
+        .header-tag { display: block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 1.5px; color: var(--mint); text-transform: uppercase; margin-top: 1px; }
+        .header-actions { display: flex; gap: 8px; }
+        .header-btn {
+            padding: 9px 14px; border-radius: var(--r-sm); font-size: 0.8rem; font-weight: 600;
+            text-decoration: none; background: var(--surface); border: 1px solid var(--border);
+            color: var(--text); display: flex; align-items: center; gap: 6px;
+            transition: border-color 0.2s, transform 0.15s, background 0.2s; font-family: var(--body);
+        }
+        .header-btn:hover { border-color: var(--border-2); background: var(--surface-2); }
+        .header-btn:active { transform: scale(0.95); }
+        .header-btn svg { width: 15px; height: 15px; fill: currentColor; }
+        #donate-btn { color: var(--mint); border-color: rgba(45,217,168,0.35); }
+        #donate-btn:hover { background: var(--mint-dim); }
+
+        /* ---------- MAIN CONTAINER ---------- */
+        .container { max-width: 920px; margin: 0 auto; padding: 28px 20px 0; flex: 1; }
+
+        .hero-strip {
+            border: 1px dashed var(--border-2); border-radius: var(--r-md); background: var(--surface);
+            padding: 18px 20px; margin-bottom: 26px; display: flex; align-items: center;
+            justify-content: space-between; gap: 14px; flex-wrap: wrap;
+        }
+        .hero-eyebrow { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 1.8px; color: var(--amber); text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .hero-eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 8px var(--mint); flex-shrink: 0; }
+        .hero-line { font-family: var(--display); font-size: 1.15rem; font-weight: 600; margin-top: 4px; color: var(--text); }
+        .hero-stat { font-family: var(--mono); font-size: 0.78rem; color: var(--text-dim); white-space: nowrap; }
+        .hero-stat strong { color: var(--mint); font-weight: 700; }
+
+        /* ---------- CONTROLS ---------- */
+        .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+        .search-wrap { flex: 1; position: relative; min-width: 220px; }
+        .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-dim); pointer-events: none; display: flex; }
+        .search-wrap input {
+            width: 100%; height: 48px; padding: 12px 15px 12px 44px; background: var(--surface);
+            border: 1px solid var(--border); border-radius: var(--r-sm); color: var(--text);
+            font-family: var(--body); font-size: 0.95rem; outline: none; transition: border-color 0.25s, box-shadow 0.25s;
+        }
+        .search-wrap input::placeholder { color: var(--text-dim); }
+        .search-wrap input:focus { border-color: var(--amber); box-shadow: 0 0 0 3px var(--amber-dim); }
+
+        .custom-dropdown { position: relative; min-width: 150px; height: 48px; }
+        .dropdown-btn {
+            height: 100%; padding: 0 14px; background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--r-sm); display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; font-size: 0.9rem; font-weight: 600; font-family: var(--body);
+        }
+        .dropdown-btn:active { transform: scale(0.97); }
+        .dropdown-menu {
+            position: absolute; top: calc(100% + 8px); right: 0; width: 100%; min-width: 170px;
+            background: var(--ink-elev); border: 1px solid var(--border); border-radius: var(--r-sm);
+            padding: 6px; opacity: 0; pointer-events: none; transform: translateY(-6px);
+            transition: opacity 0.18s ease, transform 0.2s ease; z-index: 50; box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+        }
+        .custom-dropdown.active .dropdown-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+        .dropdown-item { padding: 11px 12px; border-radius: 6px; font-size: 0.9rem; cursor: pointer; transition: background 0.15s; font-family: var(--body); }
+        .dropdown-item:hover { background: var(--surface-2); }
+        .dropdown-item.selected { background: var(--amber-dim); color: var(--amber); font-weight: 700; }
+
+        .view-switcher { display: flex; gap: 6px; height: 48px; }
+        .view-btn-toggle {
+            width: 48px; height: 48px; background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center;
+            cursor: pointer; color: var(--text-dim); transition: color 0.2s, background 0.2s, border-color 0.2s;
+        }
+        .view-btn-toggle:active { transform: scale(0.92); }
+        .view-btn-toggle.active { color: var(--ink); background: var(--amber); border-color: var(--amber); }
+        .view-btn-toggle svg { width: 20px; height: 20px; fill: currentColor; }
+
+        /* ---------- APP LIST & CARDS ---------- */
+        #app-list { padding-bottom: 24px; }
+
+        .app-card {
+            background: var(--surface); border: 1px solid var(--border); cursor: pointer; position: relative; overflow: hidden;
+            transition: transform 0.25s cubic-bezier(0.25,0.8,0.25,1.2), box-shadow 0.25s ease, border-color 0.2s ease;
+            will-change: transform; contain: layout style paint;
+        }
+        .app-card { opacity: 0; transform: translateY(16px); }
+        .app-card.visible {
+            opacity: 1; transform: translateY(0);
+            transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+        }
+        .app-card:hover { border-color: var(--border-2); background: var(--surface-2); box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
+
+        .app-card.card-press {
+            transform: scale(0.97); box-shadow: 0 2px 10px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.12);
+            transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+        }
+
+        .app-card img { object-fit: cover; opacity: 0; transition: opacity 0.35s ease; flex-shrink: 0; background: var(--ink-elev); }
+        .app-card img.loaded { opacity: 1; }
+        .app-info { flex: 1; display: flex; flex-direction: column; gap: 5px; overflow: hidden; }
+        .app-title { font-family: var(--display); font-size: 1rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text); }
+        .app-sub { font-size: 0.82rem; color: var(--text-dim); }
+        .app-meta { display: flex; gap: 7px; margin-top: 5px; flex-wrap: wrap; }
+        .app-badge {
+            font-family: var(--mono); font-size: 0.68rem; background: var(--ink-elev); padding: 4px 9px;
+            border-radius: 5px; color: var(--text-dim); font-weight: 500; border: 1px solid var(--border); letter-spacing: 0.3px;
+        }
+
+        /* GRID VIEW */
+        #app-list.grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(142px, 1fr)); gap: 14px; }
+        .grid-view .app-card {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; border-radius: var(--r-md); padding: 22px 14px 18px; border-style: dashed;
+        }
+        .grid-view .app-card img { width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 12px auto; }
+        .grid-view .app-info { align-items: center; width: 100%; }
+        .grid-view .app-meta { justify-content: center; }
+        .grid-view .app-card::after {
+            content: 'APK'; position: absolute; top: 10px; right: 10px; font-family: var(--mono);
+            font-size: 0.55rem; letter-spacing: 1px; color: var(--ink); background: var(--mint);
+            padding: 2px 6px; border-radius: 4px; font-weight: 700; z-index: 2;
+        }
+
+        /* LIST VIEW */
+        #app-list.list-view { display: flex; flex-direction: column; gap: 12px; }
+        .list-view .app-card { display: flex; flex-direction: row; align-items: center; gap: 0; border-radius: var(--r-md); padding: 0; overflow: visible; }
+        .list-view .app-card .card-logo-zone { display: flex; align-items: center; justify-content: center; padding: 14px 16px; flex-shrink: 0; }
+        .list-view .app-card img { width: 54px; height: 54px; border-radius: 13px; margin: 0; }
+        .list-view .app-card .card-perf {
+            position: relative; align-self: stretch; width: 0; border-left: 1.5px dashed var(--border-2); flex-shrink: 0;
+        }
+        .list-view .app-card .card-perf::before,
+        .list-view .app-card .card-perf::after {
+            content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+            width: 14px; height: 14px; border-radius: 50%; background: var(--ink); border: 1px solid var(--border);
+        }
+        .list-view .app-card .card-perf::before { top: -7px; }
+        .list-view .app-card .card-perf::after { bottom: -7px; }
+        .list-view .app-card .app-info { padding: 14px 16px; min-width: 0; }
+
+        /* ---------- SKELETON CARDS ---------- */
+        .skeleton-card {
+            pointer-events: none; animation: none; background: var(--surface) !important;
+            border-color: var(--border) !important; opacity: 1 !important; transform: none !important;
+            position: relative; overflow: hidden;
+        }
+        .skeleton-card::before {
+            content: ''; position: absolute; inset: 0; z-index: 5;
+            background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.04) 45%,
+            rgba(255,255,255,0.10) 50%, rgba(255,255,255,0.04) 55%, transparent 70%);
+            background-size: 200% 100%; animation: shimmerSweep 2.2s infinite linear; pointer-events: none;
+        }
+        @keyframes shimmerSweep { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+        .sk-img { background: var(--surface-2); flex-shrink: 0; }
+        .sk-line, .sk-badge { background: var(--surface-2); border-radius: 6px; }
+        .sk-line { height: 13px; margin-bottom: 9px; }
+        .sk-line.short { width: 58%; }
+        .sk-badge { height: 18px; width: 42%; margin-top: 6px; border-radius: 5px; }
+
+        .grid-view .skeleton-card { padding: 22px 14px 18px; border-style: dashed; display: flex; flex-direction: column; align-items: center; }
+        .grid-view .skeleton-card .sk-img { width: 64px; height: 64px; border-radius: 16px; margin-bottom: 14px; }
+        .grid-view .skeleton-card .sk-line { width: 80%; }
+
+        .list-view .skeleton-card { display: flex; flex-direction: row; align-items: center; padding: 0; border-radius: var(--r-md); gap: 0; overflow: visible; }
+        .list-view .skeleton-card .card-logo-zone { padding: 14px 16px; flex-shrink: 0; }
+        .list-view .skeleton-card .sk-img { width: 54px; height: 54px; border-radius: 13px; }
+        .list-view .skeleton-card .sk-lines { flex: 1; padding: 14px 16px 14px 0; }
+
+        /* ---------- PAGINATION (elegant glass style) ---------- */
+        #pagination { display: flex; justify-content: center; align-items: center; gap: 8px; padding: 16px 0 40px; flex-wrap: wrap; }
+        .page-btn {
+            width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            background: transparent; border: 1px solid var(--border-2); color: var(--text-dim);
+            font-family: var(--body); font-weight: 600; font-size: 0.9rem; cursor: pointer;
+            transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; will-change: transform;
+        }
+        .page-btn:hover:not(.active):not(:disabled) { border-color: var(--text-dim); color: var(--text); transform: translateY(-1px); }
+        /* Active button – soft mint glass, no glow */
+        .page-btn.active {
+            background: rgba(45, 217, 168, 0.12);
+            border-color: rgba(45, 217, 168, 0.3);
+            color: var(--mint);
+            font-weight: 700;
+            box-shadow: none;
+        }
+        .page-btn:disabled { opacity: 0.3; pointer-events: none; cursor: default; }
+        .page-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+        /* ---------- DETAILS MODAL ---------- */
+        .overlay {
+            position: fixed; inset: 0; z-index: 1000; background: rgba(4,5,8,0.65);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex;
+            justify-content: center; align-items: center; padding: 20px; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .overlay.active { opacity: 1; pointer-events: all; }
+        .modal-box {
+            width: 100%; max-width: 400px; background: var(--ink-elev); border: 1px solid var(--border-2);
+            border-radius: var(--r-lg); padding: 30px; text-align: center; position: relative;
+            transform: scale(0.94) translateY(14px); opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.175,0.885,0.32,1.2), opacity 0.25s ease;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+        }
+        .overlay.active .modal-box { transform: scale(1) translateY(0); opacity: 1; }
+        .modal-box::before { content: ''; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); width: 70%; border-top: 1.5px dashed var(--border-2); }
+        .close-btn {
+            position: absolute; top: 16px; right: 16px; background: var(--surface); border: 1px solid var(--border);
+            width: 32px; height: 32px; border-radius: 50%; color: var(--text); cursor: pointer;
+            font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .close-btn:hover { background: var(--surface-2); }
+        .close-btn:active { transform: scale(0.88); }
+        .popup-img { width: 92px; height: 92px; border-radius: 24px; margin-bottom: 16px; border: 1px solid var(--border); box-shadow: 0 0 0 2px var(--ink-elev), 0 0 0 3px var(--amber); object-fit: cover; }
+        .popup-h { font-family: var(--display); font-size: 1.45rem; font-weight: 700; margin-bottom: 5px; color: var(--text); }
+        .popup-p { font-size: 0.92rem; color: var(--text-dim); margin-bottom: 24px; }
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+        .stat-item { background: var(--surface); border: 1px solid var(--border); padding: 13px; border-radius: var(--r-sm); transition: border-color 0.2s; }
+        .stat-item:hover { border-color: var(--border-2); }
+        .stat-l { font-family: var(--mono); font-size: 0.62rem; color: var(--text-dim); display: block; margin-bottom: 6px; text-transform: uppercase; font-weight: 600; letter-spacing: 0.8px; }
+        .stat-v { font-family: var(--display); font-size: 1.05rem; font-weight: 700; color: var(--text); }
+        .main-btn {
+            width: 100%; padding: 15px; border-radius: var(--r-sm); border: none; font-size: 1rem; font-weight: 700;
+            font-family: var(--body); background: var(--amber); color: var(--ink); cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 9px; text-decoration: none;
+            transition: filter 0.2s, transform 0.2s;
+        }
+        .main-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+        .main-btn:active { transform: scale(0.96); }
+
+        /* ---------- FOOTER ---------- */
+        .site-footer { margin-top: auto; border-top: 1px solid var(--border); background: rgba(11,14,20,0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 28px 20px 24px; text-align: center; }
+        .footer-content { max-width: 920px; margin: 0 auto; }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 18px; flex-wrap: wrap; }
+        .social-link {
+            display: flex; align-items: center; justify-content: center; width: 42px; height: 42px;
+            border-radius: 50%; background: var(--surface); border: 1px solid var(--border);
+            color: var(--text-dim); transition: transform 0.2s, border-color 0.2s, color 0.2s, background 0.2s;
+        }
+        .social-link svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-link:hover { transform: translateY(-2px); border-color: var(--text-dim); color: var(--text); background: var(--surface-2); }
+        .footer-copy { font-size: 0.78rem; color: var(--text-dim); font-family: var(--mono); letter-spacing: 0.6px; }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 10px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px 14px 0; }
+            .header-btn { padding: 8px 11px; font-size: 0.78rem; }
+            .hero-strip { padding: 14px 16px; }
+            .hero-line { font-size: 1rem; }
+            #app-list.grid-view { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 10px; }
+            .grid-view .app-card { padding: 16px 10px 14px; }
+            .modal-box { padding: 24px 18px; }
+            .stat-v { font-size: 0.98rem; }
+            .page-btn { width: 36px; height: 36px; font-size: 0.82rem; }
+            .footer-links { gap: 16px; }
+        }
+    </style>
+</head>
+<body id="main-body">
+    <!-- ERROR OVERLAY -->
+    <div id="loader-overlay"></div>
+
+    <header class="store-header">
+        <div class="logo-area">
+            <div class="logo-seal"><img src="" id="header-logo" class="logo-img" alt="OX MODZ official logo"></div>
+            <div>
+                <h1 id="header-name">OX MODZ</h1>
+                <span class="header-tag">Verified Library</span>
+            </div>
+        </div>
+        <div class="header-actions">
+            <a href="about.html" target="_blank" rel="noopener noreferrer" id="about-link" class="header-btn">
+                <svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg> About
+            </a>
+            <a href="https://donate.page.gd/" target="_blank" rel="noopener" id="donate-btn" class="header-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> Donate
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="hero-strip">
+            <div>
+                <div class="hero-eyebrow">Zero malware &middot; manually checked</div>
+                <div class="hero-line">Pick an app, redeem the ticket, install.</div>
+            </div>
+            <div class="hero-stat"><strong>100%</strong> verified before listing</div>
+        </div>
+
+        <div class="controls">
+            <div class="search-wrap">
+                <span class="search-icon">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </span>
+                <input type="text" id="search-input" placeholder="Search apps & games..." autocomplete="off">
+            </div>
+            <div class="custom-dropdown" id="category-dropdown">
+                <div class="dropdown-btn">
+                    <span id="selected-category">All Apps</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="dropdown-item selected" data-value="All">All Apps</div>
+                    <div class="dropdown-item" data-value="App">Applications</div>
+                    <div class="dropdown-item" data-value="Game">Games</div>
+                </div>
+            </div>
+            <div class="view-switcher">
+                <button id="view-grid-btn" class="view-btn-toggle" title="Grid View" aria-label="Grid view">
+                    <svg viewBox="0 0 24 24"><path d="M3,11H11V3H3M3,21H11V13H3M13,21H21V13H13M13,3V11H21V3"/></svg>
+                </button>
+                <button id="view-list-btn" class="view-btn-toggle" title="List View" aria-label="List view">
+                    <svg viewBox="0 0 24 24"><path d="M3,4H21V6H3V4M3,11H21V13H3V11M3,18H21V20H3V18Z"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="app-list"></div>
+        <div id="pagination"></div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://x.com/OfficialOxmodzz" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/officialoxmodz?utm_source=qr&igsh=MXVoMWJwZjYwaGNkcQ==" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+                </a>
+                <a href="https://discord.gg/YSAbVHXtK5" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
+                    <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                </a>
+                <a href="https://t.me/officialoxmodz" target="_blank" rel="noopener" class="social-link" aria-label="Telegram">
+                    <svg viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10s10-4.48 10-10S17.52,2 12,2z M16.9,8.1l-1.4,7c-0.1,0.5-0.4,0.6-0.8,0.4l-2.2-1.6l-1.1,1.1c-0.1,0.1-0.2,0.2-0.4,0.2l0.1-2.3l4.2-3.8c0.2-0.2,0-0.3-0.3-0.1l-5.2,3.3l-2.2-0.7c-0.5-0.2-0.5-0.5,0.1-0.7l8.6-3.3C16.5,7.8,17,8.1,16.9,8.1z"/></svg>
+                </a>
+            </div>
+            <div class="footer-copy">© 2025 OX MODZ. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <div id="details-overlay" class="overlay">
+        <div class="modal-box">
+            <button id="close-details" class="close-btn" aria-label="Close details">&times;</button>
+            <img src="" id="popup-logo" class="popup-img" alt="App logo">
+            <h2 id="popup-title" class="popup-h"></h2>
+            <p id="popup-subtitle" class="popup-p"></p>
+            <div class="stats">
+                <div class="stat-item"><span class="stat-l">Downloads</span><span class="stat-v" id="popup-downloads"></span></div>
+                <div class="stat-item"><span class="stat-l">Size</span><span class="stat-v" id="popup-size"></span></div>
+                <div class="stat-item"><span class="stat-l">Version</span><span class="stat-v" id="popup-version"></span></div>
+                <div class="stat-item"><span class="stat-l">Rating</span><span class="stat-v" id="popup-rating"></span></div>
+            </div>
+            <button id="popup-download-btn" class="main-btn">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Download Now
+            </button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database-compat.js"></script>
+    <script>
+        (() => {
+            'use strict';
+
+            /* ---------- UTILITY: Escape HTML ---------- */
+            function escapeHtml(str) {
+                if (str == null) return '';
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+
+            /* ---------- FIREBASE INIT ---------- */
+            if (typeof firebase === 'undefined') {
+                showFatalError('Connection problem', 'Firebase scripts could not load. Please disable any ad-blocker, check your internet connection, and reload the page.');
+                return;
+            }
+
+            const firebaseConfig = {
+  apiKey: "YOUR_FIREBASE_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "YOUR_DATABASE_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.database();
+
+            /* ---------- DOM REFS ---------- */
+            const el = {
+                errorOverlay: document.getElementById('loader-overlay'),
+                list: document.getElementById('app-list'),
+                pagination: document.getElementById('pagination'),
+                search: document.getElementById('search-input'),
+                drop: document.getElementById('category-dropdown'),
+                dropVal: document.getElementById('selected-category'),
+                dropItems: document.querySelectorAll('.dropdown-item'),
+                details: document.getElementById('details-overlay'),
+                btnGrid: document.getElementById('view-grid-btn'),
+                btnList: document.getElementById('view-list-btn')
+            };
+
+            /* ---------- STATE ---------- */
+            let sortedAppEntries = [];
+            let currentCat = 'All';
+            let currentPage = 1;
+            const ITEMS_PER_PAGE = 8;
+            let dataLoaded = false;
+
+            /* ---------- ERROR HANDLING ---------- */
+            function showFatalError(title, description) {
+                const overlay = el.errorOverlay;
+                overlay.innerHTML =
+                    '<div class="error-glass-card">' +
+                    '<div class="err-icon">⚠️</div>' +
+                    '<div class="err-title">' + escapeHtml(title) + '</div>' +
+                    '<div class="err-desc">' + escapeHtml(description) + '</div>' +
+                    '<button class="err-btn primary" onclick="location.reload()">Reload</button>' +
+                    '<button class="err-btn ghost" onclick="document.getElementById(\'loader-overlay\').style.display=\'none\'">Continue anyway</button>' +
+                    '</div>';
+                overlay.style.display = 'flex';
+            }
+
+            const errorWatchdog = setTimeout(() => {
+                if (!dataLoaded) showFatalError('Loading timeout', 'The app data is taking longer than expected. Please check your connection and reload.');
+            }, 12000);
+
+            /* ---------- SKELETON LOADING ---------- */
+            function renderSkeletons(viewClass) {
+                el.list.innerHTML = '';
+                const frag = document.createDocumentFragment();
+                for (let i = 0; i < 8; i++) {
+                    const card = document.createElement('div');
+                    card.className = 'app-card skeleton-card';
+                    if (viewClass === 'list-view') {
+                        card.innerHTML =
+                            '<div class="card-logo-zone"><div class="sk-img"></div></div>' +
+                            '<div class="sk-lines">' +
+                            '<div class="sk-line" style="width:70%;"></div>' +
+                            '<div class="sk-line short" style="width:45%;"></div>' +
+                            '<div class="sk-badge" style="width:30%;"></div>' +
+                            '</div>';
+                    } else {
+                        card.innerHTML =
+                            '<div class="sk-img"></div>' +
+                            '<div class="sk-line" style="width:80%;"></div>' +
+                            '<div class="sk-line short" style="width:55%;"></div>' +
+                            '<div class="sk-badge" style="width:45%; margin-top:8px;"></div>';
+                    }
+                    frag.appendChild(card);
+                }
+                el.list.appendChild(frag);
+            }
+
+            /* ---------- OBSERVERS ---------- */
+            const imgObserver = new IntersectionObserver((entries) => {
+                for (const entry of entries) {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.onload = () => img.classList.add('loaded');
+                        img.onerror = () => img.classList.add('loaded');
+                        imgObserver.unobserve(img);
+                    }
+                }
+            }, { rootMargin: '120px' });
+
+            const cardObserver = new IntersectionObserver((entries) => {
+                for (const entry of entries) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        cardObserver.unobserve(entry.target);
+                    }
+                }
+            }, { rootMargin: '60px' });
+
+            /* ---------- PRESS INTERACTION ---------- */
+            function addPress(card) { card.classList.add('card-press'); }
+            function removePress(card) { card.classList.remove('card-press'); }
+            function clearAllPress() {
+                el.list.querySelectorAll('.app-card.card-press').forEach(c => c.classList.remove('card-press'));
+            }
+
+            el.list.addEventListener('mousedown', e => {
+                const card = e.target.closest('.app-card');
+                if (card && !card.classList.contains('skeleton-card')) addPress(card);
+            });
+            el.list.addEventListener('mouseup', () => clearAllPress());
+            el.list.addEventListener('mouseleave', () => clearAllPress());
+            el.list.addEventListener('touchstart', e => {
+                const card = e.target.closest('.app-card');
+                if (card && !card.classList.contains('skeleton-card')) addPress(card);
+            }, { passive: true });
+            el.list.addEventListener('touchend', () => clearAllPress());
+            el.list.addEventListener('touchcancel', () => clearAllPress());
+
+            /* ---------- RENDER ---------- */
+            function render() {
+                requestAnimationFrame(() => {
+                    el.list.innerHTML = '';
+                    const term = el.search.value.toLowerCase();
+                    const filtered = sortedAppEntries.filter(([, app]) =>
+                        (currentCat === 'All' || app.category === currentCat) &&
+                        app.title.toLowerCase().includes(term)
+                    );
+
+                    if (!filtered.length) {
+                        el.list.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:var(--text-dim);margin-top:20px;padding:40px;">No results found.</div>';
+                        el.pagination.innerHTML = '';
+                        return;
+                    }
+
+                    const totalItems = filtered.length;
+                    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+                    if (currentPage < 1) currentPage = 1;
+                    if (currentPage > totalPages) currentPage = totalPages;
+
+                    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+                    const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
+                    const isListView = el.list.classList.contains('list-view');
+
+                    const frag = document.createDocumentFragment();
+                    pageItems.forEach(([id, app]) => {
+                        const safeTitle = escapeHtml(app.title);
+                        const safeSub = escapeHtml(app.subtitle || 'Premium');
+                        const safeSize = escapeHtml(app.size || 'N/A');
+                        const safeCat = escapeHtml(app.category || 'App');
+                        const safeAlt = escapeHtml(app.title);
+
+                        const imgTag =
+                            '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="' +
+                            app.logoUrl + '" alt="' + safeAlt + '" loading="lazy" width="64" height="64">';
+                        const infoBlock =
+                            '<div class="app-info"><div class="app-title">' + safeTitle +
+                            '</div><div class="app-sub">' + safeSub +
+                            '</div><div class="app-meta"><span class="app-badge">' + safeSize +
+                            '</span><span class="app-badge">' + safeCat + '</span></div></div>';
+
+                        const div = document.createElement('div');
+                        div.className = 'app-card';
+                        div.dataset.id = id;
+                        if (isListView) {
+                            div.innerHTML = '<div class="card-logo-zone">' + imgTag + '</div><div class="card-perf"></div>' + infoBlock;
+                        } else {
+                            div.innerHTML = imgTag + infoBlock;
+                        }
+                        frag.appendChild(div);
+                        imgObserver.observe(div.querySelector('img'));
+                        cardObserver.observe(div);
+                    });
+                    el.list.appendChild(frag);
+
+                    if (totalItems <= 8) {
+                        el.pagination.innerHTML = '';
+                    } else {
+                        renderPagination(totalPages, currentPage);
+                    }
+                });
+            }
+
+            /* ---------- PAGINATION RENDERING ---------- */
+            function renderPagination(totalPages, currentPage) {
+                el.pagination.innerHTML = '';
+                if (totalPages <= 1) return;
+
+                const createBtn = (content, page, disabled = false, isActive = false) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'page-btn';
+                    if (typeof content === 'string') {
+                        btn.innerHTML = content;
+                    } else {
+                        btn.appendChild(content);
+                    }
+                    if (isActive) btn.classList.add('active');
+                    if (disabled) btn.disabled = true;
+                    if (!disabled && page !== null) {
+                        btn.addEventListener('click', () => goToPage(page));
+                    }
+                    return btn;
+                };
+
+                if (currentPage > 2) {
+                    const firstSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    firstSvg.setAttribute('viewBox', '0 0 24 24');
+                    firstSvg.innerHTML = '<path d="M18.41 16.59L13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"/>';
+                    el.pagination.appendChild(createBtn(firstSvg, 1));
+                }
+
+                const prevSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                prevSvg.setAttribute('viewBox', '0 0 24 24');
+                prevSvg.innerHTML = '<path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>';
+                el.pagination.appendChild(createBtn(prevSvg, currentPage - 1, currentPage === 1));
+
+                const maxVisible = 5;
+                let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+                let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+                if (endPage - startPage + 1 < maxVisible) startPage = Math.max(1, endPage - maxVisible + 1);
+
+                if (startPage > 1) {
+                    el.pagination.appendChild(createBtn('1', 1));
+                    if (startPage > 2) {
+                        const dots = document.createElement('span');
+                        dots.textContent = '…';
+                        dots.style.padding = '0 4px';
+                        dots.style.color = 'var(--text-dim)';
+                        el.pagination.appendChild(dots);
+                    }
+                }
+                for (let i = startPage; i <= endPage; i++) {
+                    el.pagination.appendChild(createBtn(i.toString(), i, false, i === currentPage));
+                }
+                if (endPage < totalPages) {
+                    if (endPage < totalPages - 1) {
+                        const dots = document.createElement('span');
+                        dots.textContent = '…';
+                        dots.style.padding = '0 4px';
+                        dots.style.color = 'var(--text-dim)';
+                        el.pagination.appendChild(dots);
+                    }
+                    el.pagination.appendChild(createBtn(totalPages.toString(), totalPages));
+                }
+
+                const nextSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                nextSvg.setAttribute('viewBox', '0 0 24 24');
+                nextSvg.innerHTML = '<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>';
+                el.pagination.appendChild(createBtn(nextSvg, currentPage + 1, currentPage === totalPages));
+
+                if (currentPage < totalPages - 1) {
+                    const lastSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    lastSvg.setAttribute('viewBox', '0 0 24 24');
+                    lastSvg.innerHTML = '<path d="M5.59 7.41L10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z"/>';
+                    el.pagination.appendChild(createBtn(lastSvg, totalPages));
+                }
+            }
+
+            function goToPage(page) {
+                currentPage = page;
+                render();
+                requestAnimationFrame(() => {
+                    const listTop = el.list.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({ top: listTop, behavior: 'smooth' });
+                });
+            }
+
+            /* ---------- EVENT LISTENERS ---------- */
+            el.search.addEventListener('input', debounce(() => { currentPage = 1; render(); }, 280));
+
+            el.drop.addEventListener('click', e => { e.stopPropagation(); el.drop.classList.toggle('active'); });
+            el.dropItems.forEach(item => {
+                item.addEventListener('click', e => {
+                    currentCat = e.target.dataset.value;
+                    el.dropVal.textContent = e.target.textContent;
+                    el.dropItems.forEach(x => x.classList.remove('selected'));
+                    e.target.classList.add('selected');
+                    currentPage = 1;
+                    render();
+                });
+            });
+            window.addEventListener('click', () => el.drop.classList.remove('active'));
+
+            el.list.addEventListener('click', e => {
+                const card = e.target.closest('.app-card');
+                if (!card || card.classList.contains('skeleton-card')) return;
+                openDetails(card.dataset.id);
+            });
+
+            el.details.addEventListener('click', e => { if (e.target === el.details) el.details.classList.remove('active'); });
+            document.getElementById('close-details').addEventListener('click', () => el.details.classList.remove('active'));
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && el.details.classList.contains('active')) el.details.classList.remove('active');
+            });
+
+            function openDetails(id) {
+                const app = sortedAppEntries.find(([i]) => i === id)?.[1];
+                if (!app) return;
+                document.getElementById('popup-logo').src = app.logoUrl;
+                document.getElementById('popup-title').innerText = app.title;
+                document.getElementById('popup-subtitle').innerText = app.subtitle || 'Premium';
+                document.getElementById('popup-downloads').innerText = app.downloads || '1K+';
+                document.getElementById('popup-size').innerText = app.size || 'N/A';
+                document.getElementById('popup-version').innerText = app.version || 'Latest';
+                document.getElementById('popup-rating').innerText = (app.rating || '4.5') + '\u2605';
+                document.getElementById('popup-download-btn').onclick = () => {
+                    window.open(app.downloadLink, '_blank', 'noopener');
+                    el.details.classList.remove('active');
+                };
+                el.details.classList.add('active');
+            }
+
+            /* ---------- VIEW SWITCHER ---------- */
+            function setupViewSwitcher() {
+                const savedView = localStorage.getItem('appView') || 'list-view';
+                setView(savedView);
+                el.btnGrid.addEventListener('click', () => setView('grid-view'));
+                el.btnList.addEventListener('click', () => setView('list-view'));
+            }
+            function setView(v) {
+                el.list.className = v;
+                el.btnList.classList.toggle('active', v === 'list-view');
+                el.btnGrid.classList.toggle('active', v === 'grid-view');
+                localStorage.setItem('appView', v);
+                dataLoaded ? render() : renderSkeletons(v);
+            }
+
+            /* ---------- DEBOUNCE ---------- */
+            function debounce(fn, ms) { let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); }; }
+
+            /* ---------- INIT ---------- */
+            function init() {
+                const savedView = localStorage.getItem('appView') || 'list-view';
+                el.list.className = savedView;
+                renderSkeletons(savedView);
+
+                db.ref('settings').once('value', snap => {
+                    const s = snap.val();
+                    if (s) {
+                        document.getElementById('header-name').innerText = s.name;
+                        document.getElementById('header-logo').src = s.logoUrl;
+                        localStorage.setItem('cachedAdminLogo', s.logoUrl);
+                    }
+                }, err => console.error('Settings read failed:', err.message));
+
+                db.ref('apps').once('value', snap => {
+                    const data = snap.val() || {};
+                    const entries = Object.entries(data).map(([id, app]) => {
+                        app._randOrder = Math.random();
+                        return [id, app];
+                    });
+                    entries.sort((a, b) => a[1]._randOrder - b[1]._randOrder);
+                    sortedAppEntries = entries;
+                    dataLoaded = true;
+                    clearTimeout(errorWatchdog);
+                    render();
+                }, err => {
+                    console.error('Apps read failed:', err.message);
+                    showFatalError('Could not load app data',
+                        'The database could not be reached. This may happen if Firebase rules do not allow public read access, or if your internet connection is unstable. Please try reloading.');
+                });
+
+                setupViewSwitcher();
+            }
+
+            document.addEventListener('DOMContentLoaded', init);
+        })();
+    </script>
+</body>
+</html>

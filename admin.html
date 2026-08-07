@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OX MODZ · Admin Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0B0E14;
+            --ink-elev: #11151D;
+            --surface: #161B24;
+            --surface-2: #1C2230;
+            --border: rgba(255,255,255,0.10);
+            --border-2: rgba(255,255,255,0.18);
+            --text: #F4F1EA;
+            --text-dim: #8B93A1;
+            --amber: #FFB020;
+            --amber-dim: rgba(255,176,32,0.14);
+            --mint: #2DD9A8;
+            --mint-dim: rgba(45,217,168,0.14);
+            --coral: #FF5D5D;
+            --coral-dim: rgba(255,93,93,0.14);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --font: 'Inter', sans-serif;
+            --display: 'Space Grotesk', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font);
+            background: var(--ink);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-image: radial-gradient(circle at 85% 0%, rgba(255,176,32,0.05) 0%, transparent 45%),
+                            radial-gradient(circle at 0% 100%, rgba(45,217,168,0.05) 0%, transparent 45%);
+        }
+
+        /* LOGIN PAGE */
+        .login-wrapper {
+            width: 100%;
+            max-width: 420px;
+        }
+        .login-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .login-card .logo-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--amber-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px dashed var(--amber);
+        }
+        .login-card h1 {
+            font-family: var(--display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+        .login-card .subtitle {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            font-family: var(--display);
+        }
+        .login-card .danger-note {
+            background: rgba(255,93,93,0.1);
+            color: var(--coral);
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            border: 1px solid var(--coral-dim);
+        }
+        .login-card input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--ink-elev);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            transition: border-color 0.2s;
+        }
+        .login-card input:focus {
+            outline: none;
+            border-color: var(--amber);
+            box-shadow: 0 0 0 3px var(--amber-dim);
+        }
+        .btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: filter 0.2s, transform 0.2s;
+            font-family: var(--font);
+        }
+        .btn-primary {
+            background: var(--amber);
+            color: var(--ink);
+        }
+        .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+        .btn-primary:disabled { opacity: 0.6; pointer-events: none; }
+        .last-login {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* ADMIN PANEL */
+        .admin-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            display: none;
+        }
+        .admin-wrapper.visible { display: block; }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 14px 20px;
+            background: rgba(11,14,20,0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+        .top-bar .brand {
+            font-family: var(--display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .logout-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .logout-btn:hover {
+            background: var(--coral);
+            border-color: var(--coral);
+            color: var(--ink);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 25px;
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 5px;
+            border: 1px solid var(--border);
+        }
+        .tab {
+            flex: 1;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-dim);
+            transition: all 0.2s;
+            background: transparent;
+            border: none;
+        }
+        .tab.active {
+            background: var(--amber);
+            color: var(--ink);
+        }
+        .tab:hover:not(.active) {
+            color: var(--text);
+        }
+
+        .panel-content {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        .panel-content h2 {
+            margin-bottom: 25px;
+            font-family: var(--display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--ink-elev);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-size: 0.95rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--amber);
+            box-shadow: 0 0 0 3px var(--amber-dim);
+        }
+        .btn-primary-sm {
+            background: var(--amber);
+            color: var(--ink);
+            border: none;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: filter 0.2s, transform 0.2s;
+        }
+        .btn-primary-sm:hover { filter: brightness(1.08); transform: translateY(-1px); }
+        .btn-secondary-sm {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .btn-secondary-sm:hover { background: var(--surface-2); }
+        .btn-danger-sm {
+            background: transparent;
+            border: 1px solid var(--coral);
+            color: var(--coral);
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .btn-danger-sm:hover { background: var(--coral); color: var(--ink); }
+
+        .app-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--ink-elev);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .app-card:hover {
+            border-color: var(--amber);
+            box-shadow: 0 0 12px rgba(255,176,32,0.15);
+        }
+        .app-card img {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            background: var(--ink);
+        }
+        .app-card .info {
+            flex: 1;
+        }
+        .app-card .info h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+        .app-card .info p {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+        .app-card .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--ink-elev);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--amber);
+            box-shadow: 0 0 0 3px var(--amber-dim);
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 30px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid;
+        }
+        .toast.show { opacity: 1; pointer-events: all; }
+        .toast.success { background: var(--mint); color: var(--ink); border-color: var(--mint); }
+        .toast.error { background: var(--coral); color: var(--ink); border-color: var(--coral); }
+        .toast.info { background: var(--amber); color: var(--ink); border-color: var(--amber); }
+
+        .hidden { display: none !important; }
+        .inline-flex { display: inline-flex; align-items: center; gap: 10px; }
+
+        @media (max-width: 768px) {
+            .app-card { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .app-card .actions { width: 100%; justify-content: flex-end; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="toast" class="toast"></div>
+
+    <!-- LOGIN VIEW -->
+    <div id="login-view" class="login-wrapper">
+        <div class="login-card">
+            <div class="logo-icon">⚡</div>
+            <h1>OX MODZ</h1>
+            <p class="subtitle">Admin Terminal</p>
+            <div class="danger-note">⚠️ Authorized personnel only</div>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required autocomplete="email">
+                <input type="password" id="login-password" placeholder="Password" required autocomplete="current-password">
+                <button type="submit" class="btn btn-primary" id="login-btn">Sign In</button>
+            </form>
+            <p class="last-login" id="last-login-info">Loading session info…</p>
+        </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div id="admin-panel" class="admin-wrapper">
+        <div class="top-bar">
+            <div class="brand">⚙️ OX Dashboard</div>
+            <button class="logout-btn" id="logout-btn">Logout</button>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="settings">Store Settings</button>
+            <button class="tab" data-tab="add">Add / Edit App</button>
+            <button class="tab" data-tab="list">App Library</button>
+        </div>
+
+        <!-- SETTINGS PANEL -->
+        <div id="tab-settings" class="panel-content">
+            <h2>Store Settings</h2>
+            <form id="settings-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Store Name</label>
+                        <input id="store-name" type="text" placeholder="e.g. OX MODZ">
+                    </div>
+                    <div class="form-group">
+                        <label>Logo URL</label>
+                        <input id="store-logo" type="url" placeholder="https://...">
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary-sm">Save Changes</button>
+            </form>
+        </div>
+
+        <!-- ADD/EDIT APP PANEL -->
+        <div id="tab-add" class="panel-content hidden">
+            <h2 id="form-title">Create New App</h2>
+            <form id="app-form">
+                <input type="hidden" id="app-id">
+                <div class="form-grid">
+                    <div class="form-group"><label>Title *</label><input id="app-title" required placeholder="App name"></div>
+                    <div class="form-group"><label>Subtitle</label><input id="app-sub" placeholder="Premium Unlocked"></div>
+                    <div class="form-group"><label>Logo URL *</label><input id="app-logo" required placeholder="https://..."></div>
+                    <div class="form-group"><label>Size</label><input id="app-size" placeholder="e.g. 45 MB"></div>
+                    <div class="form-group"><label>Downloads</label><input id="app-downs" placeholder="e.g. 1K+"></div>
+                    <div class="form-group"><label>Version</label><input id="app-ver" placeholder="e.g. 2.1.0"></div>
+                    <div class="form-group"><label>Rating</label><input id="app-rate" placeholder="e.g. 4.5"></div>
+                    <div class="form-group"><label>Category</label>
+                        <select id="app-cat"><option>App</option><option>Game</option></select>
+                    </div>
+                    <div class="form-group"><label>Download Link *</label><input id="app-link" required placeholder="https://..."></div>
+                </div>
+                <div class="inline-flex" style="margin-top:15px;">
+                    <button type="submit" id="submit-btn" class="btn-primary-sm">Publish App</button>
+                    <button type="button" id="cancel-btn" class="btn-secondary-sm hidden" onclick="resetForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- APP LIST PANEL -->
+        <div id="tab-list" class="panel-content hidden">
+            <h2>App Library</h2>
+            <input type="search" id="app-search" class="search-input" placeholder="Search apps...">
+            <div id="app-list-div"></div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+  apiKey: "YOUR_FIREBASE_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "YOUR_DATABASE_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+        firebase.initializeApp(config);
+        const auth = firebase.auth();
+        const db = firebase.database();
+        const $ = id => document.getElementById(id);
+
+        let appsData = {};
+
+        // Toast
+        function showToast(msg, type = 'success') {
+            const t = $('toast');
+            t.textContent = msg;
+            t.className = 'toast show ' + type;
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const target = tab.dataset.tab;
+                ['settings', 'add', 'list'].forEach(id => {
+                    const panel = document.getElementById('tab-' + id);
+                    if (id === target) panel.classList.remove('hidden');
+                    else panel.classList.add('hidden');
+                });
+            });
+        });
+
+        // Auth state
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                $('login-view').style.display = 'none';
+                $('admin-panel').classList.add('visible');
+                loadAllData();
+            } else {
+                $('login-view').style.display = 'block';
+                $('admin-panel').classList.remove('visible');
+            }
+        });
+
+        // Login
+        $('login-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = $('login-btn');
+            btn.disabled = true;
+            btn.textContent = 'Signing in…';
+            auth.signInWithEmailAndPassword($('login-email').value, $('login-password').value)
+                .then(() => db.ref('admin_meta/lastLogin').set(new Date().toISOString()))
+                .catch(err => {
+                    showToast(err.message, 'error');
+                    btn.disabled = false;
+                    btn.textContent = 'Sign In';
+                });
+        });
+
+        $('logout-btn').addEventListener('click', () => auth.signOut());
+
+        // Last login display
+        db.ref('admin_meta/lastLogin').on('value', snap => {
+            if (snap.exists()) {
+                $('last-login-info').textContent = 'Last login: ' + new Date(snap.val()).toLocaleString();
+            } else {
+                $('last-login-info').textContent = 'No previous login data.';
+            }
+        });
+
+        function loadAllData() {
+            db.ref('settings').on('value', s => {
+                if (s.exists()) {
+                    $('store-name').value = s.val().name || '';
+                    $('store-logo').value = s.val().logoUrl || '';
+                }
+            });
+            db.ref('apps').on('value', s => {
+                appsData = s.val() || {};
+                renderAppList(appsData);
+            });
+        }
+
+        function renderAppList(data) {
+            const div = $('app-list-div');
+            div.innerHTML = '';
+            if (!Object.keys(data).length) {
+                div.innerHTML = '<p style="color:var(--text-dim);text-align:center;padding:20px;">No apps found.</p>';
+                return;
+            }
+            Object.entries(data).reverse().forEach(([id, app]) => {
+                const card = document.createElement('div');
+                card.className = 'app-card';
+                card.innerHTML = `
+                    <img src="${app.logoUrl}" alt="Logo" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23161B24%22 width=%2256%22 height=%2256%22/></svg>'">
+                    <div class="info">
+                        <h3>${app.title}</h3>
+                        <p>${app.category} · ${app.size || 'N/A'}</p>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-primary-sm edit-btn">Edit</button>
+                        <button class="btn-danger-sm delete-btn">Delete</button>
+                    </div>
+                `;
+                card.querySelector('.edit-btn').addEventListener('click', () => editApp(id));
+                card.querySelector('.delete-btn').addEventListener('click', () => delApp(id));
+                div.appendChild(card);
+            });
+        }
+
+        // Settings save
+        $('settings-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.disabled = true;
+            btn.textContent = 'Saving…';
+            db.ref('settings').set({
+                name: $('store-name').value,
+                logoUrl: $('store-logo').value
+            }).then(() => {
+                showToast('Settings saved!');
+            }).catch(err => showToast(err.message, 'error'))
+            .finally(() => {
+                btn.disabled = false;
+                btn.textContent = 'Save Changes';
+            });
+        });
+
+        // App form
+        $('app-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = $('submit-btn');
+            btn.disabled = true;
+            btn.textContent = 'Saving…';
+            const appData = {
+                title: $('app-title').value,
+                subtitle: $('app-sub').value,
+                logoUrl: $('app-logo').value,
+                size: $('app-size').value,
+                downloads: $('app-downs').value,
+                version: $('app-ver').value,
+                rating: $('app-rate').value,
+                category: $('app-cat').value,
+                downloadLink: $('app-link').value,
+            };
+            const appId = $('app-id').value;
+            const promise = appId ? db.ref('apps/' + appId).update(appData) : db.ref('apps').push({...appData, timestamp: firebase.database.ServerValue.TIMESTAMP});
+            promise.then(() => {
+                showToast(appId ? 'App updated!' : 'App published!');
+                resetForm();
+                document.querySelector('.tab[data-tab="list"]').click();
+            }).catch(err => showToast(err.message, 'error'))
+            .finally(() => {
+                btn.disabled = false;
+                btn.textContent = 'Publish App';
+            });
+        });
+
+        window.editApp = id => {
+            const a = appsData[id];
+            $('app-id').value = id;
+            $('form-title').textContent = 'Edit App';
+            $('submit-btn').textContent = 'Update App';
+            $('app-title').value = a.title || '';
+            $('app-sub').value = a.subtitle || '';
+            $('app-logo').value = a.logoUrl || '';
+            $('app-size').value = a.size || '';
+            $('app-downs').value = a.downloads || '';
+            $('app-ver').value = a.version || '';
+            $('app-rate').value = a.rating || '';
+            $('app-cat').value = a.category || 'App';
+            $('app-link').value = a.downloadLink || '';
+            $('cancel-btn').classList.remove('hidden');
+            document.querySelector('.tab[data-tab="add"]').click();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        window.delApp = id => {
+            if (confirm(`Delete "${appsData[id].title}"? This cannot be undone.`)) {
+                db.ref('apps/' + id).remove()
+                    .then(() => showToast('App deleted.', 'info'))
+                    .catch(err => showToast(err.message, 'error'));
+            }
+        };
+
+        window.resetForm = () => {
+            $('app-form').reset();
+            $('app-id').value = '';
+            $('form-title').textContent = 'Create New App';
+            $('submit-btn').textContent = 'Publish App';
+            $('cancel-btn').classList.add('hidden');
+        };
+
+        // Search
+        $('app-search').addEventListener('input', e => {
+            const term = e.target.value.toLowerCase();
+            if (!term) return renderAppList(appsData);
+            const filtered = {};
+            Object.entries(appsData).forEach(([k, v]) => {
+                if (v.title.toLowerCase().includes(term)) filtered[k] = v;
+            });
+            renderAppList(filtered);
+        });
+    </script>
+</body>
+</html>
