@@ -27,7 +27,7 @@
 
 ### 📚 Table of Contents
 
-[About](#-about-ox-modz) · [Why OX MODZ](#-why-ox-modz) · [Featured Apps](#-featured-applications) · [Project Structure](#-project-structure) · [Tech Stack](#️-tech-stack) · [Founder](#-about-the-founder) · [Links](#-official-platform-links)
+[About](#-about-ox-modz) · [Why OX MODZ](#-why-ox-modz) · [Featured Apps](#-featured-applications) · [Project Structure](#-project-structure) · [Tech Stack](#️-tech-stack) · [Support the Project](#-support-the-project) · [Founder](#-about-the-founder) · [Links](#-official-platform-links)
 
 ---
 
@@ -107,6 +107,20 @@ The store front dynamically pulls the app catalog and site settings from Firebas
 
 ---
 
+## 💖 Support the Project
+
+OX MODZ is free to use and ad-light by choice — keeping it that way (hosting, testing devices, malware scanning tools) takes ongoing effort. If OX MODZ has been useful to you, consider chipping in to help keep it alive and growing.
+
+<div align="center">
+
+[![Donate](https://img.shields.io/badge/Donate-Support%20OX%20MODZ-FF5E5B?style=for-the-badge&logo=heart&logoColor=white)](https://donate.page.gd/?i=1)
+
+</div>
+
+Every contribution, big or small, directly supports server costs, app verification, and new features.
+
+---
+
 ## 👤 About the Founder
 
 **OX MODZ** was founded and built by **Subham Kumar Prusty**, an engineering student from Odisha, India 🇮🇳 — driven by one goal: making it possible to access premium Android apps and games without compromising device security.
@@ -130,6 +144,7 @@ The store front dynamically pulls the app catalog and site settings from Firebas
 |---|---|
 | 🌍 Website | https://oxmodz.page.gd/ |
 | 📄 About Us | https://oxmodz.page.gd/about.html |
+| 💖 Donate | https://donate.page.gd/?i=1 |
 | 💬 Telegram | https://t.me/officialoxmodz |
 | 🎮 Discord | https://discord.gg/YSAbVHXtK5 |
 | 📸 Instagram | https://www.instagram.com/officialoxmodz |
