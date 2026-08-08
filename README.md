@@ -7,7 +7,6 @@
 **The official, verified Android APK library** — safe MOD APKs, premium apps, and malware-free games, curated and manually tested before publishing.
 
 [![Website](https://img.shields.io/badge/Website-oxmodz.page.gd-3ddc84?style=for-the-badge)](https://oxmodz.page.gd/)
-[![Donate](https://img.shields.io/badge/Donate-donate.page.gd-ff4d6d?style=for-the-badge)](https://donate.page.gd/)
 [![Telegram](https://img.shields.io/badge/Telegram-Join-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/officialoxmodz)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/YSAbVHXtK5)
 [![Instagram](https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/officialoxmodz)
@@ -28,7 +27,7 @@
 
 ### 📚 Table of Contents
 
-[About](#-about-ox-modz) · [Why OX MODZ](#-why-ox-modz) · [Featured Apps](#-featured-applications) · [Project Structure](#-project-structure) · [Tech Stack](#️-tech-stack) · [Founder](#-about-the-founder) · [Support](#-support-ox-modz) · [Links](#-official-platform-links)
+[About](#-about-ox-modz) · [Why OX MODZ](#-why-ox-modz) · [Featured Apps](#-featured-applications) · [Project Structure](#-project-structure) · [Tech Stack](#️-tech-stack) · [Founder](#-about-the-founder) · [Links](#-official-platform-links)
 
 ---
 
@@ -125,21 +124,12 @@ The store front dynamically pulls the app catalog and site settings from Firebas
 
 ---
 
-## ❤️ Support OX MODZ
-
-Keeping OX MODZ running — hosting, testing every app on real devices, and manual verification — takes time and money. If OX MODZ has helped you, consider supporting the project:
-
-[![Donate](https://img.shields.io/badge/❤️_Donate-donate.page.gd-ff4d6d?style=for-the-badge)](https://donate.page.gd/)
-
----
-
 ## 🌐 Official Platform Links
 
 | Platform | Link |
 |---|---|
 | 🌍 Website | https://oxmodz.page.gd/ |
 | 📄 About Us | https://oxmodz.page.gd/about.html |
-| ❤️ Donate | https://donate.page.gd/ |
 | 💬 Telegram | https://t.me/officialoxmodz |
 | 🎮 Discord | https://discord.gg/YSAbVHXtK5 |
 | 📸 Instagram | https://www.instagram.com/officialoxmodz |
