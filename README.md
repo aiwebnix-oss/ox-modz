@@ -4,7 +4,7 @@
 <!--                        HERO SECTION                           -->
 <!-- ══════════════════════════════════════════════════════════════ -->
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=2800&pause=800&color=3DDC84&center=true&vCenter=true&width=600&lines=%E2%9A%A1+OX+MODZ+%E2%9A%A1;Zero+Compromise.+Pure+Performance.;Verified.+Scanned.+Trusted." alt="OX MODZ" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=2800&pause=800&color=3DDC84&center=true&vCenter=true&width=600&lines=%E2%9A%A1+OX+MODZ+%E2%9A%A1;Zero+Compromise.;Pure+Performance.;Verified.+Scanned.+Trusted." alt="OX MODZ" />
 
 <br>
 
@@ -51,10 +51,10 @@
 
 |     |     |
 |:---:|:---|
-| [📱 About](#-about-ox-modz) | [✨ Why Us](#-why-ox-modz-stands-out) |
+| [📱 About](#-about-ox-modz) | [❤️ Support](#-support-the-project) |
 | [🚀 Featured Apps](#-featured-applications) | [📂 Structure](#-project-structure) |
 | [🛠️ Tech Stack](#️-tech-stack) | [👤 Founder](#-about-the-founder) |
-| [🌐 Links](#-official-links) | [❤️ Support](#-support-the-project) |
+| [🌐 Links](#-official-links) 
 
 <br>
 
@@ -71,11 +71,6 @@
 Every single app goes through our **hardcore 4-stage verification pipeline** — something most sites completely skip:
 
 <br>
-
-```
- 🔐 SIGNATURE CHECK    →   🔬 MULTI-ENGINE SCAN    →   📱 REAL-DEVICE TEST    →   📡 LIVE MONITORING
-  (Hash + cert verify)     (Zero tolerance policy)      (Physical Android HW)      (Continuous integrity)
-```
 
 <br>
 
@@ -135,16 +130,16 @@ Our catalog is **100% dynamic** (Firebase-powered). New apps go live instantly f
 
 <br>
 
-```
+```text
 oxmodz/
-├── 📄 index.html           → Main storefront (search, filters, catalog — Firebase-driven)
-├── 📄 about.html           → Brand story, security pipeline, founder, mission & vision
-├── 🔒 admin.html           → Internal dashboard (restricted, not publicly linked)
-├── 🖼️ favicon.png          → Site icon used in meta/OG tags & browser tabs
-├── 🧑 owner.webp           → Founder portrait (displayed on About page)
-├── 🤖 robots.txt           → Search-engine crawl rules
-├── 🗺️ sitemap.xml          → XML sitemap for indexing
-└── 📖 README.md            → You're reading it right now ✨
+├── 📄 index.html → Main storefront (search, filters, catalog — Firebase-driven)
+├── 📄 about.html → Brand story, security pipeline, founder, mission & vision
+├── 🔒 admin.html → Internal dashboard (restricted, not publicly linked)
+├── 🖼️ favicon.png → Site icon used in meta/OG tags & browser tabs
+├── 🧑 owner.webp → Founder portrait (displayed on About page)
+├── 🤖 robots.txt → Search-engine crawl rules
+├── 🗺️ sitemap.xml → XML sitemap for indexing
+└── 📖 README.md → You're reading it right now ✨
 ```
 
 <br>
