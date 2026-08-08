@@ -12,7 +12,22 @@
 [![Instagram](https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/officialoxmodz)
 [![X](https://img.shields.io/badge/X-Follow-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/OfficialOxModzz)
 
+<br>
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+![Status](https://img.shields.io/badge/Status-Live-3ddc84?style=flat-square)
+![Made in India](https://img.shields.io/badge/Made%20in-India%20🇮🇳-FF9933?style=flat-square)
+
 </div>
+
+---
+
+### 📚 Table of Contents
+
+[About](#-about-ox-modz) · [Why OX MODZ](#-why-ox-modz) · [Featured Apps](#-featured-applications) · [Project Structure](#-project-structure) · [Tech Stack](#️-tech-stack) · [Founder](#-about-the-founder) · [Links](#-official-platform-links)
 
 ---
 
@@ -43,15 +58,39 @@ Every app on OX MODZ goes through a multi-layered verification pipeline — **so
 
 ## 🚀 Featured Applications
 
-- **Truecaller** — Gold & Premium Unlocked
-- **Lightroom** — Premium Unlocked & Lite
-- **YouTube** — All Premium Features
-- **Alight Motion** — Pro Features Unlocked
-- **CapCut Pro** — PC & Android Tools
-- **Spotify** — Premium Unlocked
-- **Hopweb**
+The catalog is **fully dynamic** — powered by Firebase, so titles are added/updated live from the admin dashboard rather than hardcoded into the site. It's organized into two browsable categories, **Applications** and **Games**, both searchable from the homepage.
 
-*Library is searchable and filterable by category directly on the [website](https://oxmodz.page.gd/) — new titles are added regularly.*
+Titles that have been featured on the store include:
+
+| App | Unlocked / Notes |
+|---|---|
+| **Truecaller** | Gold & Premium |
+| **Lightroom** | Premium & Lite |
+| **YouTube** | All Premium features |
+| **Alight Motion** | Pro features unlocked |
+| **CapCut Pro** | PC & Android tools |
+| **Spotify** | Premium unlocked |
+| **Hopweb** | — |
+
+> ⚙️ Since the catalog updates live, this list is illustrative, not exhaustive — check the [live store](https://oxmodz.page.gd/) for the current lineup.
+
+---
+
+## 📂 Project Structure
+
+```
+oxmodz/
+├── index.html          # Main store — search, category filters, app catalog (Firebase-driven)
+├── about.html           # Brand story, trust & security pipeline, founder, mission/vision
+├── admin.html            # Restricted internal dashboard (access-controlled, not public)
+├── favicon.png           # Site icon — used across meta/OG tags
+├── owner.webp            # Founder portrait, used on the About page
+├── robots.txt             # Search-engine crawl rules
+├── sitemap.xml             # XML sitemap for search-engine indexing
+└── README.md                # You are here
+```
+
+> 🔒 `admin.html` is a restricted internal tool — it is not linked from public navigation and its internals are intentionally not documented here.
 
 ---
 
@@ -62,7 +101,7 @@ Every app on OX MODZ goes through a multi-layered verification pipeline — **so
 | **Frontend** | HTML5, CSS3, Vanilla JavaScript |
 | **Backend / Data** | Google Firebase (Realtime Database) |
 | **Hosting** | InfinityFree + custom subdomain architecture |
-| **SEO** | Structured data (`schema.org` Organization & WebSite JSON-LD), Open Graph, Twitter Cards, canonical URLs |
+| **SEO** | Structured data (`schema.org` Organization & WebSite JSON-LD), Open Graph, Twitter Cards, canonical URLs, `robots.txt` + `sitemap.xml` |
 
 The store front dynamically pulls the app catalog and site settings from Firebase — search, category filtering, grid/list view, and pagination are all handled client-side for a fast, app-store-like experience.
 
@@ -77,8 +116,9 @@ The store front dynamically pulls the app catalog and site settings from Firebas
 
 ### Connect with Subham Kumar Prusty
 
-[![Instagram](https://img.shields.io/badge/Instagram-@im.xubhh-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/im.xubhh)
+[![Instagram](https://img.shields.io/badge/Instagram-@im.xubhh-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/im.xubhh?igsh=MWtuN3B6cmNnMW9pZQ==)
 [![X](https://img.shields.io/badge/X-@imxubhh-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/imxubhh)
+[![Threads](https://img.shields.io/badge/Threads-@im.xubhh-000000?style=flat-square&logo=threads&logoColor=white)](https://www.threads.com/@im.xubhh)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/YSAbVHXtK5)
 [![Telegram](https://img.shields.io/badge/Telegram-officialoxmodz-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/officialoxmodz)
 
