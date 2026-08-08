@@ -1,4 +1,4 @@
-Is README.md ko organize karke likho, kuch baflav mat karna bs professionally organize karo: # OX MODZ — Verified Android Apps & MOD APK Library 📱
+# OX MODZ — Verified Android Apps & MOD APK Library 📱
 
 <p align="center">
   <strong>OX MODZ</strong> is a curated, security-first Android app library focused on verified apps, games, premium applications, and MOD APKs.
