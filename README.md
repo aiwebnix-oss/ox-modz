@@ -4,7 +4,7 @@
 
 ### Every app, checked before it reaches you.
 
-**The official OX MODZ Android APK library** for verified Android apps, games, MOD APKs, and premium Android applications, curated and manually tested before publishing.
+**The official, verified Android APK library** — safe MOD APKs, premium apps, and malware-free games, curated and manually tested before publishing.
 
 [![Website](https://img.shields.io/badge/Website-oxmodz.page.gd-3ddc84?style=for-the-badge)](https://oxmodz.page.gd/)
 [![Telegram](https://img.shields.io/badge/Telegram-Join-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/officialoxmodz)
@@ -25,57 +25,44 @@
 
 ---
 
-## Table of Contents
+### 📚 Table of Contents
 
-- [About OX MODZ](#about-ox-modz)
-- [Why OX MODZ](#why-ox-modz)
-- [Featured Applications](#featured-applications)
-- [Project Structure](#project-structure)
-- [Technology Stack](#technology-stack)
-- [About the Founder](#about-the-founder)
-- [Official Platform Links](#official-platform-links)
+[About](#-about-ox-modz) · [Why OX MODZ](#-why-ox-modz) · [Featured Apps](#-featured-applications) · [Project Structure](#-project-structure) · [Tech Stack](#️-tech-stack) · [Founder](#-about-the-founder) · [Links](#-official-platform-links)
 
 ---
 
-## About OX MODZ
+## 📱 About OX MODZ
 
-**OX MODZ**, also written as **OxModz**, **OXMODZ**, or **ox modz**, is a trusted Android APK library built to solve a simple problem: the modded-app space is full of low-quality sites, intrusive ads, and unverified files with zero accountability.
+**OX MODZ** (also searched as *OxModz*, *OXMODZ*, *ox modz*, *ox mods*) is a trusted Android APK library built to solve a simple problem: the modded-app space is full of low-quality sites, intrusive ads, and unverified files with zero accountability.
 
-Every app on OX MODZ goes through a multi-layered verification pipeline — **source signature validation → multi-engine malware scan → real-device install testing → post-publish monitoring** — before it is listed. The project does not use auto-scraping, shady redirects, or dark patterns.
+Every app on OX MODZ goes through a multi-layered verification pipeline — **source signature validation → multi-engine malware scan → real-device install testing → post-publish monitoring** — before it's ever listed. No auto-scraping, no shady redirects, no dark patterns.
 
-- **Live Website:** [oxmodz.page.gd](https://oxmodz.page.gd/)
-- **About / Trust & Security:** [oxmodz.page.gd/about.html](https://oxmodz.page.gd/about.html)
+- 🔗 **Live Website:** [oxmodz.page.gd](https://oxmodz.page.gd/)
+- 📄 **About / Trust & Security:** [oxmodz.page.gd/about.html](https://oxmodz.page.gd/about.html)
 
 ---
 
-## Why OX MODZ
+## ✨ Why OX MODZ
 
-| Focus | Description |
+| | |
 |---|---|
-| **Malware scanning** | Every file is scanned across multiple engines, and even a low-confidence flag gets it rejected. |
-| **Verified applications** | Digital signatures, file integrity, and real-device behavior are checked before anything goes live. |
-| **Regular updates** | New app versions are tracked closely and pushed within hours of release; stale builds get retired. |
-| **Premium experience** | No cluttered layout and no aggressive pop-ups — just a fast, clean, distraction-free store UI. |
-| **Curated, not scraped** | Every app is handpicked and tested on real Android devices before it meets the bar. |
+| 🛡️ **Malware-free promise** | Every file is scanned across multiple engines — even a low-confidence flag gets it rejected. |
+| ✅ **Verified apps only** | Digital signatures, file integrity, and real-device behavior are checked before anything goes live. |
+| ⚡ **Regular updates** | New app versions are tracked closely and pushed within hours of release; stale builds get retired. |
+| 🎯 **Premium experience** | No cluttered layout, no aggressive pop-ups — just a fast, clean, distraction-free store UI. |
+| 🧑‍💻 **Curated, not scraped** | Every app is handpicked and tested on real Android devices before it meets the bar. |
 
-**Trust, in numbers:** 50+ verified apps · 0 malware incidents · 24-hour average update cycle.
-
-> Malware scanning and manual testing are part of the verification process, but users should still review app permissions, device compatibility, and download details before installation.
+**Trust, in numbers:** 50+ verified apps · 0 malware incidents · 24h average update cycle.
 
 ---
 
-## Featured Applications
+## 🚀 Featured Applications
 
-The catalog is **fully dynamic** and powered by Firebase. Titles are added and updated live from the admin dashboard rather than being hardcoded into the site.
+The catalog is **fully dynamic** — powered by Firebase, so titles are added/updated live from the admin dashboard rather than hardcoded into the site. It's organized into two browsable categories, **Applications** and **Games**, both searchable from the homepage.
 
-It is organized into two browsable categories:
+Titles that have been featured on the store include:
 
-- **Applications**
-- **Games**
-
-Both categories are searchable from the homepage. Titles that have been featured on the store include:
-
-| Application | Unlocked / Notes |
+| App | Unlocked / Notes |
 |---|---|
 | **Truecaller** | Gold & Premium |
 | **Lightroom** | Premium & Lite |
@@ -85,7 +72,75 @@ Both categories are searchable from the homepage. Titles that have been featured
 | **Spotify** | Premium unlocked |
 | **Hopweb** | — |
 
-> Since the catalog updates live, this list is illustrative rather than exhaustive. Check the [live store](https://oxmodz.page.gd/) for the current lineup.
+> ⚙️ Since the catalog updates live, this list is illustrative, not exhaustive — check the [live store](https://oxmodz.page.gd/) for the current lineup.
 
 ---
 
+## 📂 Project Structure
+
+```
+oxmodz/
+├── index.html          # Main store — search, category filters, app catalog (Firebase-driven)
+├── about.html           # Brand story, trust & security pipeline, founder, mission/vision
+├── admin.html            # Restricted internal dashboard (access-controlled, not public)
+├── favicon.png           # Site icon — used across meta/OG tags
+├── owner.webp            # Founder portrait, used on the About page
+├── robots.txt             # Search-engine crawl rules
+├── sitemap.xml             # XML sitemap for search-engine indexing
+└── README.md                # You are here
+```
+
+> 🔒 `admin.html` is a restricted internal tool — it is not linked from public navigation and its internals are intentionally not documented here.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Stack |
+|---|---|
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
+| **Backend / Data** | Google Firebase (Realtime Database) |
+| **Hosting** | InfinityFree + custom subdomain architecture |
+| **SEO** | Structured data (`schema.org` Organization & WebSite JSON-LD), Open Graph, Twitter Cards, canonical URLs, `robots.txt` + `sitemap.xml` |
+
+The store front dynamically pulls the app catalog and site settings from Firebase — search, category filtering, grid/list view, and pagination are all handled client-side for a fast, app-store-like experience.
+
+---
+
+## 👤 About the Founder
+
+**OX MODZ** was founded and built by **Subham Kumar Prusty**, an engineering student from Odisha, India 🇮🇳 — driven by one goal: making it possible to access premium Android apps and games without compromising device security.
+
+**Mission:** Build the most trusted Android APK library on the web, where every download is verified and every user feels confident.
+**Vision:** Make premium MOD APK access the safe, transparent, community-driven default — not the exception.
+
+### Connect with Subham Kumar Prusty
+
+[![Instagram](https://img.shields.io/badge/Instagram-@im.xubhh-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/im.xubhh?igsh=MWtuN3B6cmNnMW9pZQ==)
+[![X](https://img.shields.io/badge/X-@imxubhh-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/imxubhh)
+[![Threads](https://img.shields.io/badge/Threads-@im.xubhh-000000?style=flat-square&logo=threads&logoColor=white)](https://www.threads.com/@im.xubhh)
+[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/YSAbVHXtK5)
+[![Telegram](https://img.shields.io/badge/Telegram-officialoxmodz-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/officialoxmodz)
+
+---
+
+## 🌐 Official Platform Links
+
+| Platform | Link |
+|---|---|
+| 🌍 Website | https://oxmodz.page.gd/ |
+| 📄 About Us | https://oxmodz.page.gd/about.html |
+| 💬 Telegram | https://t.me/officialoxmodz |
+| 🎮 Discord | https://discord.gg/YSAbVHXtK5 |
+| 📸 Instagram | https://www.instagram.com/officialoxmodz |
+| ✖️ X (Twitter) | https://x.com/OfficialOxModzz |
+
+---
+
+<div align="center">
+
+**© 2026 OX MODZ. All rights reserved.**
+
+*Safe downloads. Verified apps. Zero compromise.*
+
+</div>
