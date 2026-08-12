@@ -7,7 +7,7 @@
     <meta name="description" content="OX MODZ (OxModz, OXMODZ, oxmodz) is the official source for verified, safe Android apps and mods. Download premium apps, games, and mods securely from oxmodz.page.gd.">
     <meta name="google-site-verification" content="jkNeNZXubUoiF2WftFQgLnL0h_elqNuesLE003KHy_8" />
     <link rel="canonical" href="https://oxmodz.page.gd/" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" id="robots-meta" content="index, follow" />
     <meta property="og:title" content="OX MODZ – Safe & Verified Android Apps | Official OXMODZ Website" />
     <meta property="og:description" content="OX MODZ (OxModz, OXMODZ) is the official source for verified, safe Android apps and mods. Download premium apps, games, and mods securely." />
     <meta property="og:image" content="https://oxmodz.page.gd/favicon.png" />
@@ -59,7 +59,8 @@
         "https://x.com/OfficialOxmodzz",
         "https://www.instagram.com/officialoxmodz?utm_source=qr&igsh=MXVoMWJwZjYwaGNkcQ==",
         "https://discord.gg/YSAbVHXtK5",
-        "https://t.me/officialoxmodz"
+        "https://t.me/officialoxmodz",
+        "https://github.com/aiwebnix-oss/ox-modz"
       ]
     }
     </script>
@@ -412,15 +413,252 @@
             .page-btn { width: 36px; height: 36px; font-size: 0.82rem; }
             .footer-links { gap: 16px; }
         }
+
+        /* ============================================================
+           TEMPORARY CLOSURE — "Sealed for a moment" screen
+           Signature element: a rotating verification seal (radar sweep
+           + dual dashed rings + OX monogram) that echoes the site's own
+           "verified" / ticket-stub language, so the closure screen still
+           feels like it belongs to OX MODZ rather than a generic
+           maintenance template.
+           ============================================================ */
+        #closure-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 24px;
+            overflow: hidden;
+            background: #07090e;
+            animation: tcFadeIn 0.6s ease both;
+            contain: layout style paint;
+        }
+        #closure-overlay.active { display: flex; }
+        @keyframes tcFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ---- Ambient mesh backdrop (kept light: 2 blobs, translate-only motion, no grain layer) ---- */
+        .tc-mesh { position: absolute; inset: -10%; pointer-events: none; z-index: 0; contain: strict; }
+        .tc-blob {
+            position: absolute; border-radius: 50%; filter: blur(42px);
+            will-change: transform; animation: tcDrift 26s ease-in-out infinite;
+            transform: translateZ(0);
+        }
+        .tc-blob-1 {
+            width: 340px; height: 340px;
+            top: -12%; left: -10%;
+            background: radial-gradient(circle, rgba(255,176,32,0.16) 0%, transparent 70%);
+        }
+        .tc-blob-2 {
+            width: 300px; height: 300px;
+            bottom: -14%; right: -8%;
+            background: radial-gradient(circle, rgba(45,217,168,0.14) 0%, transparent 70%);
+            animation-duration: 30s; animation-delay: -8s;
+        }
+        @keyframes tcDrift {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(2.5%, -3%, 0); }
+        }
+
+        /* ---- Decorative concentric rings, centered behind the card (no blur, cheap to paint) ---- */
+        .tc-rings { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 0; }
+        .tc-ring {
+            position: absolute; top: 50%; left: 50%; border-radius: 50%;
+            border: 1px solid rgba(255,176,32,0.10);
+            transform: translate(-50%, -50%);
+            animation: tcRingPulse 7s ease-in-out infinite;
+        }
+        .tc-ring:nth-child(1) { width: 320px; height: 320px; opacity: 0.5; }
+        .tc-ring:nth-child(2) { width: 440px; height: 440px; opacity: 0.3; animation-delay: -3.5s; }
+        @keyframes tcRingPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+            50% { transform: translate(-50%, -50%) scale(1.04); opacity: 0.4; }
+        }
+
+        /* ---- Glass card (lighter blur so it's cheap to composite over the animated mesh) ---- */
+        .tc-card {
+            position: relative; z-index: 1;
+            max-width: 440px; width: 100%;
+            background: linear-gradient(180deg, rgba(20,24,33,0.92) 0%, rgba(14,17,24,0.94) 100%);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-2);
+            border-radius: var(--r-lg);
+            padding: 40px 32px 32px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.06);
+            animation: tcCardRise 0.7s cubic-bezier(0.16,1,0.3,1) both;
+            animation-delay: 0.1s;
+        }
+        @keyframes tcCardRise {
+            from { opacity: 0; transform: translateY(22px) scale(0.98); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* status pill, echoes the site's app-badge / hero-eyebrow language */
+        .tc-status {
+            display: inline-flex; align-items: center; gap: 7px;
+            font-family: var(--mono); font-size: 0.68rem; font-weight: 700;
+            letter-spacing: 1.6px; text-transform: uppercase; color: var(--coral);
+            background: var(--coral-dim); border: 1px solid rgba(255,93,93,0.3);
+            padding: 6px 13px; border-radius: 999px; margin-bottom: 26px;
+        }
+        .tc-status-dot {
+            width: 6px; height: 6px; border-radius: 50%; background: var(--coral);
+            box-shadow: 0 0 8px var(--coral); flex-shrink: 0;
+            animation: tcDotPulse 1.8s ease-in-out infinite;
+        }
+        @keyframes tcDotPulse { 0%, 100% { opacity: 0.5; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.15); } }
+
+        /* the seal — signature element */
+        .tc-seal { width: 128px; height: 128px; margin: 0 auto 22px; position: relative; }
+        .tc-seal svg { width: 100%; height: 100%; overflow: visible; }
+
+        /* ticket-style perforation divider, matching .card-perf in list view */
+        .tc-perf {
+            position: relative; height: 0; width: 84%; max-width: 220px;
+            margin: 4px auto 24px; border-top: 1.5px dashed var(--border-2);
+        }
+        .tc-perf::before, .tc-perf::after {
+            content: ''; position: absolute; top: 50%; transform: translateY(-50%);
+            width: 13px; height: 13px; border-radius: 50%;
+            background: #07090e; border: 1px solid var(--border-2);
+        }
+        .tc-perf::before { left: -7px; }
+        .tc-perf::after { right: -7px; }
+
+        .tc-title {
+            font-family: var(--display); font-size: clamp(1.5rem, 5.5vw, 1.85rem);
+            font-weight: 700; line-height: 1.28; color: var(--text);
+            letter-spacing: -0.3px; margin-bottom: 14px;
+        }
+        .tc-title span { color: var(--amber); }
+
+        .tc-subtitle {
+            font-family: var(--body); font-size: 0.95rem; line-height: 1.65;
+            color: var(--text-dim); max-width: 340px; margin: 0 auto 26px;
+        }
+
+        /* three-dot "checking back" loader, quiet and functional */
+        .tc-loader { display: flex; justify-content: center; gap: 7px; margin-bottom: 26px; }
+        .tc-loader span {
+            width: 6px; height: 6px; border-radius: 50%; background: var(--mint);
+            opacity: 0.35; animation: tcLoaderBeat 1.4s ease-in-out infinite;
+        }
+        .tc-loader span:nth-child(2) { animation-delay: 0.18s; }
+        .tc-loader span:nth-child(3) { animation-delay: 0.36s; }
+        @keyframes tcLoaderBeat {
+            0%, 80%, 100% { opacity: 0.3; transform: translateY(0) scale(0.85); }
+            40% { opacity: 1; transform: translateY(-4px) scale(1); }
+        }
+
+        .tc-footer {
+            font-family: var(--mono); font-size: 0.72rem; letter-spacing: 1.2px;
+            color: var(--text-dim); opacity: 0.75;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #closure-overlay, .tc-blob, .tc-ring, .tc-card, .tc-status-dot, .tc-loader span,
+            .tc-seal svg *, .tc-seal svg animateTransform, .tc-seal svg animateMotion {
+                animation: none !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .tc-card { padding: 32px 22px 26px; border-radius: var(--r-md); }
+            .tc-seal { width: 100px; height: 100px; margin-bottom: 18px; }
+            .tc-subtitle { font-size: 0.88rem; margin-bottom: 22px; }
+            .tc-ring:nth-child(1) { width: 230px; height: 230px; }
+            .tc-ring:nth-child(2) { width: 320px; height: 320px; }
+        }
     </style>
 </head>
 <body id="main-body">
+    <!-- PREMIUM TEMPORARY CLOSURE OVERLAY -->
+    <div id="closure-overlay">
+        <!-- Ambient gradient mesh + grain -->
+        <div class="tc-mesh" aria-hidden="true">
+            <div class="tc-blob tc-blob-1"></div>
+            <div class="tc-blob tc-blob-2"></div>
+        </div>
+        <!-- Concentric pulse rings -->
+        <div class="tc-rings" aria-hidden="true">
+            <div class="tc-ring"></div>
+            <div class="tc-ring"></div>
+        </div>
+
+        <div class="tc-card" role="alert" aria-live="polite">
+            <div class="tc-status"><span class="tc-status-dot"></span>Temporarily Offline</div>
+
+            <div class="tc-seal" aria-hidden="true">
+                <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="tcGlow" x="-60%" y="-60%" width="220%" height="220%">
+                            <feGaussianBlur stdDeviation="3.5" result="tcBlur" />
+                            <feMerge>
+                                <feMergeNode in="tcBlur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                        <linearGradient id="tcSweep" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="var(--amber)" stop-opacity="0.55" />
+                            <stop offset="100%" stop-color="var(--amber)" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- radar sweep, continuously rotating -->
+                    <path d="M70 70 L70 10 A60 60 0 0 1 111.8 28.2 Z" fill="url(#tcSweep)">
+                        <animateTransform attributeName="transform" type="rotate" from="0 70 70" to="360 70 70" dur="4.5s" repeatCount="indefinite" />
+                    </path>
+
+                    <!-- outer dashed ring -->
+                    <circle cx="70" cy="70" r="62" fill="none" stroke="rgba(255,176,32,0.32)" stroke-width="1.4" stroke-dasharray="2 7" stroke-linecap="round">
+                        <animateTransform attributeName="transform" type="rotate" from="0 70 70" to="360 70 70" dur="28s" repeatCount="indefinite" />
+                    </circle>
+                    <!-- inner dashed ring, opposite direction -->
+                    <circle cx="70" cy="70" r="49" fill="none" stroke="rgba(45,217,168,0.28)" stroke-width="1.4" stroke-dasharray="1 6" stroke-linecap="round">
+                        <animateTransform attributeName="transform" type="rotate" from="360 70 70" to="0 70 70" dur="20s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- seal core -->
+                    <circle cx="70" cy="70" r="37" fill="rgba(11,14,20,0.92)" stroke="rgba(255,255,255,0.14)" stroke-width="1" />
+
+                    <!-- OX monogram: mint "O", amber "X" -->
+                    <g transform="translate(70,70)" filter="url(#tcGlow)">
+                        <circle cx="-11" cy="0" r="9.5" fill="none" stroke="var(--mint)" stroke-width="3.4" />
+                        <g stroke="var(--amber)" stroke-width="3.4" stroke-linecap="round">
+                            <line x1="4" y1="-9" x2="18" y2="9" />
+                            <line x1="18" y1="-9" x2="4" y2="9" />
+                        </g>
+                    </g>
+
+                    <!-- orbiting verification pulse -->
+                    <circle r="3" fill="var(--mint)">
+                        <animateMotion dur="4.5s" repeatCount="indefinite" path="M70,11 A59,59 0 1,1 69.9,11 Z" />
+                        <animate attributeName="opacity" values="0.25;1;0.25" dur="1.7s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+            </div>
+
+            <div class="tc-perf"></div>
+
+            <h1 class="tc-title">OX <span>MODZ</span> is taking a short break</h1>
+            <p class="tc-subtitle">The store is paused for a moment — nothing you saved is going anywhere. Please check back shortly.</p>
+
+            <div class="tc-loader" aria-hidden="true"><span></span><span></span><span></span></div>
+
+            <div class="tc-footer">— The Person Behind OX MODZ —</div>
+        </div>
+    </div>
+
     <!-- ERROR OVERLAY -->
     <div id="loader-overlay"></div>
 
     <header class="store-header">
         <div class="logo-area">
-            <div class="logo-seal"><img src="" id="header-logo" class="logo-img" alt="OX MODZ official logo"></div>
+            <div class="logo-seal"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="header-logo" class="logo-img" alt="OX MODZ official logo" style="opacity:0; transition: opacity 0.25s ease;"></div>
             <div>
                 <h1 id="header-name">OX MODZ</h1>
                 <span class="header-tag">Verified Library</span>
@@ -440,7 +678,7 @@
         <div class="hero-strip">
             <div>
                 <div class="hero-eyebrow">Zero malware &middot; manually checked</div>
-                <div class="hero-line">Pick an app, redeem the ticket, install.</div>
+                <div class="hero-line">Pick an app, install.</div>
             </div>
             <div class="hero-stat"><strong>100%</strong> verified before listing</div>
         </div>
@@ -491,6 +729,9 @@
                 <a href="https://t.me/officialoxmodz" target="_blank" rel="noopener" class="social-link" aria-label="Telegram">
                     <svg viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10s10-4.48 10-10S17.52,2 12,2z M16.9,8.1l-1.4,7c-0.1,0.5-0.4,0.6-0.8,0.4l-2.2-1.6l-1.1,1.1c-0.1,0.1-0.2,0.2-0.4,0.2l0.1-2.3l4.2-3.8c0.2-0.2,0-0.3-0.3-0.1l-5.2,3.3l-2.2-0.7c-0.5-0.2-0.5-0.5,0.1-0.7l8.6-3.3C16.5,7.8,17,8.1,16.9,8.1z"/></svg>
                 </a>
+                <a href="https://github.com/aiwebnix-oss/ox-modz" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/></svg>
+                </a>
             </div>
             <div class="footer-copy">© 2025 OX MODZ. All rights reserved.</div>
         </div>
@@ -536,13 +777,13 @@
             }
 
             const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "YOUR_DATABASE_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDEMO_xxxxxxx***123456789",
+  authDomain: "demo-project-12345.firebaseapp.com",
+  databaseURL: "https://demo-project-12345-default-rtdb.firebaseio.com",
+  projectId: "demo-project-12345",
+  storageBucket: "demo-project-12345.firebasestorage.app",
+  messagingSenderId: "123456789012",
+  appId: "1:123456789012:web:xxxxxxxxxxxxxxxx"
 };
             firebase.initializeApp(firebaseConfig);
             const db = firebase.database();
@@ -558,7 +799,8 @@
                 dropItems: document.querySelectorAll('.dropdown-item'),
                 details: document.getElementById('details-overlay'),
                 btnGrid: document.getElementById('view-grid-btn'),
-                btnList: document.getElementById('view-list-btn')
+                btnList: document.getElementById('view-list-btn'),
+                robotsMeta: document.getElementById('robots-meta')
             };
 
             /* ---------- STATE ---------- */
@@ -866,6 +1108,21 @@
             /* ---------- DEBOUNCE ---------- */
             function debounce(fn, ms) { let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); }; }
 
+            /* ---------- SEO-SAFE MAINTENANCE MODE ----------
+               When the admin toggles websiteStatus to "closed", we tell
+               search engines not to index this render of the page via a
+               dynamic <meta name="robots" content="noindex"> swap.
+               When it's back to "open", the tag reverts to "index, follow"
+               so normal indexing resumes. This is a soft, best-effort
+               signal (not a real HTTP 503) but costs nothing and adds a
+               safety layer against accidental Soft-404-like crawls during
+               future maintenance/testing windows. No visual behavior,
+               visitor experience, or existing feature is changed. */
+            function updateRobotsMeta(status) {
+                if (!el.robotsMeta) return;
+                el.robotsMeta.setAttribute('content', status === 'closed' ? 'noindex' : 'index, follow');
+            }
+
             /* ---------- INIT ---------- */
             function init() {
                 const savedView = localStorage.getItem('appView') || 'list-view';
@@ -876,7 +1133,9 @@
                     const s = snap.val();
                     if (s) {
                         document.getElementById('header-name').innerText = s.name;
-                        document.getElementById('header-logo').src = s.logoUrl;
+                        const logoImg = document.getElementById('header-logo');
+                        logoImg.onload = function() { this.style.opacity = '1'; };
+                        logoImg.src = s.logoUrl;
                         localStorage.setItem('cachedAdminLogo', s.logoUrl);
                     }
                 }, err => console.error('Settings read failed:', err.message));
@@ -899,6 +1158,20 @@
                 });
 
                 setupViewSwitcher();
+
+                // ========== WEBSITE CLOSURE LISTENER ==========
+                const closureOverlay = document.getElementById('closure-overlay');
+                db.ref('settings/websiteStatus').on('value', snap => {
+                    const status = snap.val();
+                    if (status === 'closed') {
+                        closureOverlay.classList.add('active');
+                    } else {
+                        closureOverlay.classList.remove('active');
+                    }
+                    updateRobotsMeta(status);
+                }, err => {
+                    console.error('Website status listener error:', err);
+                });
             }
 
             document.addEventListener('DOMContentLoaded', init);
